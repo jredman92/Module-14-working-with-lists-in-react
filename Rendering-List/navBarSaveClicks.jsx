@@ -2,11 +2,11 @@
 function NavBar(props) {
   const [clicks, setClicks] = React.useState([]);
   console.log(`clicks: ${clicks}`);
-  alert(`Rendering NavBar`);
+  // alert(`Rendering NavBar`);
   const list = props.menuitems;
   const { Button } = ReactBootstrap;
   // each item should have an unique key
-  const handlßeClick = e => {
+  const handleClick = (e) => {
     console.log(`clicked on: ${e.target.innerHTML}`);
     setClicks([...clicks, e.target.innerHTML]);
   };
@@ -20,6 +20,7 @@ function NavBar(props) {
   // note that React needs to have a single Parent
   return <ul>{updatedList}</ul>;
 }
+
 const menuItems = [1, 2, 3, 4, 5];
 ReactDOM.render(
   <NavBar menuitems={menuItems} />,
